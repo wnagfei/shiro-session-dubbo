@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/microservice-sc-parent/microservice-sc--userservice/src/main/main1.iml" filepath="$PROJECT_DIR$/microservice-sc-parent/microservice-sc--userservice/src/main/main1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice-sc-parent/microservice-sc-master/src/main/main2.iml" filepath="$PROJECT_DIR$/microservice-sc-parent/microservice-sc-master/src/main/main2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice-sc-parent/microservice-sc-suitetwo/src/main/main3.iml" filepath="$PROJECT_DIR$/microservice-sc-parent/microservice-sc-suitetwo/src/main/main3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice-sc-parent/microservice-sc-userfacade/src/main/main4.iml" filepath="$PROJECT_DIR$/microservice-sc-parent/microservice-sc-userfacade/src/main/main4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice-sc-parent/microservice-sc--userservice/src/test/test.iml" filepath="$PROJECT_DIR$/microservice-sc-parent/microservice-sc--userservice/src/test/test.iml" />
+    </modules>
+  </component>
+</project>

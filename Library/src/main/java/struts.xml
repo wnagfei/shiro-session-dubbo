@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="login" namespace="/" extends="struts-default">
+		<action name="login_action" class="loginAction" method="login">
+			<result name="adm" >/admin/admin_index.jsp</result>
+			<result name="usr" >/user/user_index.jsp</result>
+			<result name="err" >jump.jsp</result>
+		</action>
+		<action name="sign_out" class="loginAction" method="signout">
+			<result name="signout" type="redirect">login.jsp</result>
+		</action>
+		<action name="upload_file" class="uploadAction" method="execute">
+			<result name="jump">/jump.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 用户信息模块 -->
+	<package name="user" namespace="/" extends="struts-default">
+	
+		<!-- 显示所有的用户信息 -->
+		<action name="show_all_users" class="userAction" method="showAllUsersMessage">
+			<result name="showAllUsers">/admin/showAllUsers.jsp</result>
+		</action>
+		
+		<!-- 显示用户个人信息 -->
+		<action name="show_user_message" class="userAction" method="showUserMessage">
+			<result name="showUser">/user/userMessage.jsp</result>
+		</action>
+		
+		<!-- 查询用户信息 -->
+		<action name="search_user_message" class="userAction" method="searchUserMessage">
+			<result name="jump">jump.jsp</result>
+			<result name="searchUserRe">/admin/showAllUsers.jsp</result>
+		</action>
+		
+		<!-- 添加用户信息 -->
+		<action name="insert_user_message" class="userAction" method="insertUser">
+			<result name="jump">/jump.jsp</result>
+		</action>
+		
+		<!-- 删除用户信息 -->
+		<action name="delete_user_message" class="userAction" method="deleteUser">
+			<result name="jump">/jump.jsp</result>
+		</action>
+		
+		<!-- 用户修改之前显示的信息 -->
+		<action name="show_user_message_before_delete" class="userAction" method="showUserMessage">
+			<result name="showUser">/user/updateUserMessage.jsp</result>
+		</action>
+		
+		<!-- 用户修改自己的信息 -->
+		<action name="update_user_by_yourself" class="userAction" method="updateUserinfo">
+			<result name="jump">/jump.jsp</result>
+		</action>
+		
+		<!-- 管理员修改之前显示的信息 -->
+		<action name="show_before_update" class="userAction" method="showBeforeUpdate">
+			<result name="showBeforeUpdate">/admin/updateUserMessage.jsp</result>
+		</action>
+		
+		<!-- 管理员修改用户信息 -->
+		<action name="update_user_by_admin" class="userAction" method="updateUser">
+			<result name="jump">/jump.jsp</result>
+		</action>
+		
+		<!-- 修改用户密码 -->
+		<action name="update_userPw" class="userAction" method="updatePassword">
+			<result name="jump">/jump.jsp</result>
+		</action>
+		
+		<!-- 设置抢座好友 -->
+		<action name="set_friend" class="userAction" method="setFriend">
+			<result name="jump">/jump.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 公告管理模块 -->
+	<package name="notice" namespace="/" extends="struts-default">
+	
+		<!-- 显示所有公告信息 -->
+		<action name="show_all_notices" class="noticeAction" method="showAllNotices">
+			<result name="showAllNotices">/admin/showAllNotices.jsp</result>
+		</action>
+		
+		<!-- 显示首页的公告 -->
+		<action name="index_notices" class="noticeAction" method="showIndexNotice">
+			<result name="show">/user/indexContent.jsp</result>
+		</action>
+		
+		<!-- 查看某个公告 -->
+		<action name="show_notice" class="noticeAction" method="showNotice">
+			<result name="showNotice">/admin/showNoticeDetail.jsp</result>
+		</action>
+		
+		<!-- 删除公告 -->
+		<action name="delete_notice" class="noticeAction" method="deleteNotice">
+			<result name="jump">/jump.jsp</result>
+		</action>
+		
+		<!-- 添加公告 -->
+		<action name="insert_notice_message" class="noticeAction" method="insertNotice">
+			<result name="jump">/jump.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 座位信息模块 -->
+	<package name="seat" namespace="/" extends="struts-default">
+	
+		<!-- 查看所有座位信息 -->
+		<action name="show_all_seats" class="seatAction" method="showAllSeats">
+			<result name="showAllSeats">/admin/showAllSeats.jsp</result>
+		</action>
+		
+		<!-- 管理员查询座位信息 -->
+		<action name="show_seat" class="seatAction" method="showSeat">
+			<result name="jump">jump.jsp</result>
+			<result name="showSeat">/admin/showAllSeats.jsp</result>
+		</action>
+		
+		<!-- 用户查询座位信息 -->
+		<action name="show_seat_message" class="seatAction" method="showSeatMessage">
+			<result name="jump">jump.jsp</result>
+			<result name="showSeat">/user/showSeatMessage.jsp</result>
+		</action>
+		
+		<!-- 添加座位信息 -->
+		<action name="insert_seat_message" class="seatAction" method="insertSeat">
+			<result name="jump">/jump.jsp</result>
+		</action>
+		
+		<!-- 删除座位信息 -->
+		<action name="delete_seat" class="seatAction" method="deleteSeat">
+			<result name="jump">/jump.jsp</result>
+		</action>
+		
+		<!-- 管理员修改座位信息之前的显示 -->
+		<action name="show_seat_before_update" class="seatAction" method="showBeforeUpdate">
+			<result name="showBeforeUpdate">/admin/updateSeatMessage.jsp</result>
+		</action>
+		
+		<!-- 修改座位信息 -->
+		<action name="update_seat" class="seatAction" method="updateSeat">
+			<result name="jump">/jump.jsp</result>
+		</action>
+		
+		<!-- 设置所有座位为可预约 -->
+		<action name="recovery_seat" class="seatAction" method="recoverySeat">
+			<result name="jump">/jump.jsp</result>
+		</action>
+		
+	</package>
+	
+	<!-- 座位预约模块 -->
+	<package name="order" namespace="/" extends="struts-default">
+		
+		<!-- 空座位查询 -->
+		<action name="show_empty_seat" class="seatAction" method="showEmptySeat">
+			<result name="showEmptySeat">/user/emptySeat.jsp</result>
+			<result name="jump">/jump.jsp</result>
+		</action>
+		
+		<!-- 预约信息查询 -->
+		<action name="show_order" class="orderAction" method="showOrderByUserId">
+			<result name="showOrderMessage">/user/myOrdermessage.jsp</result>
+			<result name="jump">/jump.jsp</result>
+		</action>
+		
+		<!-- 座位预约 -->
+		<action name="order_seat" class="orderAction" method="SeatOrder">
+			<result name="jump">/jump.jsp</result>
+		</action>
+		
+		<!-- 在空座位列表中预约座位 -->
+		<action name="order_seat_from_empty" class="orderAction" method="seatOrderFromEmpty">
+			<result name="jump">/jump.jsp</result>
+		</action>
+		
+		<!-- 一键预约座位 -->
+		<action name="order_by_one_button" class="orderAction" method="orderByOneButton">
+			<result name="jump">/jump.jsp</result>
+		</action>
+		
+		<!-- 取消预约 -->
+		<action name="delete_order" class="orderAction" method="deleteOrderinfo">
+			<result name="jump">/jump.jsp</result>
+		</action>
+		
+		<!-- 一键删除预约信息 -->
+		<action name="delete_all" class="orderAction" method="deleteByOneButton">
+			<result name="jump">/jump.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 长期座位申请模块 -->
+	<package name="longtermapply" namespace="/" extends="struts-default">
+		<!-- 长期座位申请 -->
+		<action name="insert_longtermapply" class="longtermapplyAction" method="insertLongtermapplyinfo">
+			<result name="jump">/jump.jsp</result>
+		</action>
+		
+		<!-- 查看个人长期座位信息 -->
+		<action name="show_longtermapply_message" class="longtermapplyAction" method="showLongtermapplyinfoByUserId">
+			<result name="showLongtermapply">/user/myLongtermapplyMessage.jsp</result>
+			<result name="jump">/jump.jsp</result>
+		</action>
+		
+		<!-- 查询长期座位申请信息 -->
+		<action name="search_longtermapplyinfo" class="longtermapplyAction" method="searchLongtermapplyinfo">
+			<result name="searchLongtermapplyRe">/admin/showAllLongtermapplys.jsp</result>
+		</action>
+		
+		<!-- 查看全部长期座位申请信息 -->
+		<action name="show_all_longtermapplyinfo" class="longtermapplyAction" method="showAllLongtermapplyinfo">
+			<result name="showAllLongtermapply">/admin/showAllLongtermapplys.jsp</result>
+		</action>
+	
+		<!-- 删除长期座位申请信息 -->
+		<action name="delete_longtermapply" class="longtermapplyAction" method="deleteLongtermapply">
+			<result name="jump">/jump.jsp</result>
+		</action>
+		
+		<!-- 审核长期座位申请信息 -->
+		<action name="check_longtermapply" class="longtermapplyAction" method="checkLongtermapply">
+			<result name="jump">/jump.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 专业信息管理 -->
+	<package name="major" namespace="/" extends="struts-default">
+	
+		<!-- 查看所有专业信息 -->
+		<action name="show_all_majorinfo" class="majorAction" method="showAllMajor">
+			<result name="showAllMajor">/admin/showAllMajors.jsp</result>
+		</action>
+		
+		<!-- 添加专业信息 -->
+		<action name="insert_major_message" class="majorAction" method="insertMajor">
+			<result name="jump">/jump.jsp</result>
+		</action>
+		
+		<!-- 删除专业信息 -->
+		<action name="delete_major" class="majorAction" method="deleteMajorinfo">
+			<result name="jump">/jump.jsp</result>
+		</action>
+	</package>
+
+	<!-- 学院信息管理 -->
+	<package name="scademy" namespace="/" extends="struts-default">
+	
+		<!-- 查看所有学院信息 -->
+		<action name="show_all_scademyinfo" class="scademyAction" method="showAllScademy">
+			<result name="showAllScademy">/admin/showAllScademys.jsp</result>
+		</action>
+		
+		<!-- 添加学院信息 -->
+		<action name="insert_scademy_message" class="scademyAction" method="insertScademy">
+			<result name="jump">/jump.jsp</result>
+		</action>
+		
+		<!-- 删除学院信息 -->
+		<action name="delete_scademy" class="scademyAction" method="deleteScademyinfo">
+			<result name="jump">/jump.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 历史记录管理 -->
+	<package name="history" namespace="/" extends="struts-default">
+		
+		<!-- 查看历史记录 -->
+		<action name="show_history" class="historyAction" method="showHistory">
+			<result name="showHistory">/user/showHistorys.jsp</result>
+		</action>
+		
+		<!-- 删除历史记录 -->
+		<action name="delete_history" class="historyAction" method="deleteHistory">
+			<result name="jump">/jump.jsp</result>
+		</action>
+		
+		<!-- 删除用户所有历史记录 -->
+		<action name="delete_all_historys" class="historyAction" method="deleteAllHistorys">
+			<result name="jump">/jump.jsp</result>
+		</action>
+		
+	</package>
+</struts>   

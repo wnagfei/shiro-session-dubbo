@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="microservice-sc-master:war">
+    <output-path>$PROJECT_DIR$/microservice-sc-master/target</output-path>
+    <root id="archive" name="microservice-sc-master.war">
+      <element id="artifact" artifact-name="microservice-sc-master:war exploded" />
+    </root>
+  </artifact>
+</component>

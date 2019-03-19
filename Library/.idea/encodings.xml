@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/main/java/com/controller/LoginAction.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/controller/OrderAction.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/controller/ScademyAction.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/controller/SeatAction.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/dao/BaseDaoHibImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/services/HistoryinfoService.java" charset="GBK" />
+  </component>
+</project>
